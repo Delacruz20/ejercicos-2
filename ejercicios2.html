@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <h1>Ejercicios 2</h1>
+
+    <script>
+      /*
+      5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+      */
+
+      const invertir = (cadena = "") =>
+        !cadena
+          ? console.warn("No ingresaste una cadena de texto")
+          : cadena.split("").reverse().join("");
+
+      console.log(invertir("Hola Mundo"));
+
+      /*
+      6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+      */
+
+      const palabrasRepetidas = (texto = "") =>
+        !texto
+          ? console.warn("No ingresaste la cadena de texto")
+          : "Numero de palabras repetidas: " +
+            texto.trim().replace(/\s+/gi, " ").split(" ").length;
+
+      console.log(palabrasRepetidas("Mundo Mundo"));
+
+      /*
+      7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+      */
+
+      const palindromo1 = (cadena0 = "") =>
+        !cadena0
+          ? console.warn("No ingresate la cadena de texto")
+          : cadena0.toLowerCase() ===
+            cadena0.toLowerCase().split("").reverse().join("")
+          ? true
+          : false;
+
+      console.log(palindromo1("Salas"));
+
+      /*
+      8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+      */
+      const extraerNumeros1 = (cadena1 = "", cadena2 = "") =>
+        !cadena1
+          ? console.warn("No ingresate la cadena de texto")
+          : !cadena2
+          ? console.warn("No ingresate la cadena de texto")
+          : cadena1.replace(/[^\d]/g, " ") +
+            " " +
+            cadena2.replace(/[^\d]/g, " ");
+
+      console.log(extraerNumeros1("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz10"));
+    </script>
+  </body>
+</html>
